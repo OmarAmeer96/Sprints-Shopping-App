@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sprints_shopping_app/features/auth/widgets/signin_view_body.dart';
+import 'package:sprints_shopping_app/features/signin/ui/widgets/signin_view_body.dart';
 
 class SigninView extends StatelessWidget {
   const SigninView({super.key});

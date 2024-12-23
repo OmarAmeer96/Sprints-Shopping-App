@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sprints_shopping_app/core/di/dependency_injection.dart';
 import 'package:sprints_shopping_app/core/routing/routes.dart';
-import 'package:sprints_shopping_app/features/auth/signin_view.dart';
-import 'package:sprints_shopping_app/features/auth/signup_view.dart';
+import 'package:sprints_shopping_app/features/signin/logic/login_cubit/login_cubit.dart';
+import 'package:sprints_shopping_app/features/signin/ui/signin_view.dart';
+import 'package:sprints_shopping_app/features/signup/ui/signup_view.dart';
 import 'package:sprints_shopping_app/features/home/home_view.dart';
 import 'package:sprints_shopping_app/features/splash/presentation/splash_view.dart';
 
@@ -19,7 +22,10 @@ class AppRouter {
 
       case Routes.signinView:
         return MaterialPageRoute(
-          builder: (_) => const SigninView(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const SigninView(),
+          ),
         );
 
       case Routes.signupView:
