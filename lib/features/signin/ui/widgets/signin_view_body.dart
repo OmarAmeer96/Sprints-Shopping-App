@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sprints_shopping_app/core/helpers/spacing.dart';
 import 'package:sprints_shopping_app/core/theming/colors_manager.dart';
 import 'package:sprints_shopping_app/core/theming/styles.dart';
 import 'package:sprints_shopping_app/core/widgets/custom_main_button.dart';
+import 'package:sprints_shopping_app/features/signin/logic/login_cubit/login_cubit.dart';
 import 'package:sprints_shopping_app/features/signin/ui/widgets/do_not_have_an_account_text.dart';
 import 'package:sprints_shopping_app/features/signin/ui/widgets/login_bloc_listener.dart';
 import 'package:sprints_shopping_app/features/signin/ui/widgets/login_email_and_password_widget.dart';
@@ -17,22 +19,22 @@ class SigninViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
-      child: Padding(
-        padding: EdgeInsets.only(
-          top: 50.h,
-          left: 24.w,
-          right: 24.w,
-          bottom: 24.h,
-        ),
-        child: Stack(
-          children: [
-            CustomPositionedHomeOverlay(),
-            SizedBox(
-              width: double.infinity,
-              height: double.infinity,
+      child: Stack(
+        children: [
+          CustomPositionedHomeOverlay(),
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: SingleChildScrollView(
               child: Column(
                 children: [
-                  SingleChildScrollView(
+                  Padding(
+                    padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).padding.top + 24.h,
+                      left: 24.w,
+                      right: 24.w,
+                      bottom: 24.h,
+                    ),
                     child: Column(
                       children: [
                         const LoginViewWelcomeTexts(),
@@ -47,7 +49,7 @@ class SigninViewBody extends StatelessWidget {
                                 child: Text(
                                   'Forgot password?',
                                   style: Styles.font12HomeBanner.copyWith(
-                                    color: ColorsManager.primaryColor,
+                                    color: ColorsManager.textFieldFillColor,
                                   ),
                                 ),
                               ),
@@ -59,8 +61,6 @@ class SigninViewBody extends StatelessWidget {
                               },
                               buttonText: 'Login',
                             ),
-                            // verticalSpace(18),
-                            // const TermsAndConditionsText(),
                             verticalSpace(60),
                             const DontHaveAccountText(),
                             const LoginBlocListener(),
@@ -72,15 +72,15 @@ class SigninViewBody extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
   void validateThenLogin(BuildContext context) {
-    // if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-    //   context.read<LoginCubit>().emitLoginState();
-    // }
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginState();
+    }
   }
 }

@@ -36,7 +36,7 @@ class CustomMainButton extends StatelessWidget {
           ),
         ),
         backgroundColor: WidgetStatePropertyAll(
-          backgroundColor ?? ColorsManager.primaryColor,
+          backgroundColor ?? ColorsManager.accentColor,
         ),
         padding: WidgetStateProperty.all<EdgeInsets>(
           EdgeInsets.symmetric(
@@ -51,7 +51,11 @@ class CustomMainButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         buttonText,
-        style: textStyle ?? Styles.font18White600,
+        style: textStyle ??
+            Styles.font12HomeBanner.copyWith(
+              color: Colors.white,
+              fontSize: 16.sp,
+            ),
       ),
     );
   }

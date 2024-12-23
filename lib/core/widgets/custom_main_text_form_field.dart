@@ -54,7 +54,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.r),
               borderSide: const BorderSide(
-                color: ColorsManager.enabledTextFieldColor,
+                color: ColorsManager.accentColor,
                 width: 1.3,
               ),
             ),
@@ -62,7 +62,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.r),
               borderSide: const BorderSide(
-                color: ColorsManager.mainBlue,
+                color: ColorsManager.secondaryColor,
                 width: 1.3,
               ),
             ),

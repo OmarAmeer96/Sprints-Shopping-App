@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sprints_shopping_app/core/helpers/app_regex.dart';
 import 'package:sprints_shopping_app/core/helpers/spacing.dart';
+import 'package:sprints_shopping_app/core/theming/colors_manager.dart';
 import 'package:sprints_shopping_app/core/theming/styles.dart';
 import 'package:sprints_shopping_app/core/widgets/custom_main_text_form_field.dart';
 import 'package:sprints_shopping_app/core/widgets/password_vlaidations.dart';
@@ -67,9 +68,13 @@ class _LoginEmailAndPasswordWidgetState
                 return 'Please enter your email';
               }
             },
-            prefixIcon: const Icon(Icons.email_outlined),
+            prefixIcon: const Icon(
+              Icons.email_outlined,
+              color: ColorsManager.accentColor,
+            ),
             focusNode: emailFocusNode,
             nextFocusNode: passwordFocusNode,
+            fillColor: Colors.transparent,
           ),
           verticalSpace(18),
           CustomMainTextFormFiels(
@@ -85,9 +90,13 @@ class _LoginEmailAndPasswordWidgetState
               },
               child: Icon(
                 isObscureText ? Icons.visibility_off : Icons.visibility,
+                color: ColorsManager.accentColor,
               ),
             ),
-            prefixIcon: const Icon(Icons.password_rounded),
+            prefixIcon: const Icon(
+              Icons.password_rounded,
+              color: ColorsManager.accentColor,
+            ),
             controller: context.read<LoginCubit>().passwordController,
             validator: (value) {
               if (value!.isEmpty) {
@@ -95,6 +104,7 @@ class _LoginEmailAndPasswordWidgetState
               }
             },
             focusNode: passwordFocusNode,
+            fillColor: Colors.transparent,
           ),
           verticalSpace(18),
           PasswordValidations(

@@ -19,6 +19,7 @@ class LoginViewWelcomeTexts extends StatelessWidget {
             style: Styles.font22AppBar.copyWith(
               fontSize: 24.sp,
               letterSpacing: -0.48,
+              color: Colors.white,
             ),
           ),
         ),
@@ -28,6 +29,7 @@ class LoginViewWelcomeTexts extends StatelessWidget {
           style: Styles.font20HeaderSection.copyWith(
             fontSize: 15.sp,
             letterSpacing: 0.20,
+            color: Colors.white,
           ),
         ),
       ],
