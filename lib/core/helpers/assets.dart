@@ -1,6 +1,7 @@
 class SvgAssets {
   // App Logo
   static const homeAppLogo = 'assets/svgs/home_app_logo.svg';
+  static const lensIcon = 'assets/svgs/lens_icon.svg';
 
   // Splash
   static const splashItem = 'assets/svgs/splash_item.svg';

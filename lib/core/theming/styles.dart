@@ -27,6 +27,22 @@ class Styles {
     letterSpacing: 0.70,
   );
 
+  static TextStyle font12HomeBanner = TextStyle(
+    color: Colors.white,
+    fontSize: 12.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.52,
+  );
+
+  static TextStyle font22SplashText = TextStyle(
+    color: Colors.white,
+    fontSize: 22.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 1.10,
+  );
+
   // OLD
   static TextStyle font22AppBar = TextStyle(
     color: Colors.black,

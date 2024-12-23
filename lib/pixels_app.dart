@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sprints_shopping_app/core/routing/app_router.dart';
 import 'package:sprints_shopping_app/core/theming/colors_manager.dart';
-import 'package:sprints_shopping_app/features/home/home_view.dart';
+import 'package:sprints_shopping_app/features/splash/presentation/splash_view.dart';
 
 class PixelsApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -24,7 +24,7 @@ class PixelsApp extends StatelessWidget {
             seedColor: ColorsManager.primaryColor,
           ),
         ),
-        home: HomeView(),
+        home: SplashView(),
       ),
     );
   }

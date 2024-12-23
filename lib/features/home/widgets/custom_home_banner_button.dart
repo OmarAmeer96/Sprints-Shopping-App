@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sprints_shopping_app/core/theming/styles.dart';
 
 class CustomHomeBannerButton extends StatelessWidget {
   const CustomHomeBannerButton({
@@ -25,11 +26,7 @@ class CustomHomeBannerButton extends StatelessWidget {
       ),
       child: Text(
         'Explore now',
-        style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: Colors.white,
-        ),
+        style: Styles.font12HomeBanner,
       ),
     );
   }
