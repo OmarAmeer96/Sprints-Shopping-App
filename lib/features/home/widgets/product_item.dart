@@ -1,48 +1,105 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:sprints_shopping_app/features/home/widgets/product_item_add_to_cart_button.dart';
-import 'package:sprints_shopping_app/features/home/widgets/product_item_details.dart';
+import 'package:sprints_shopping_app/core/helpers/display_flush_bar.dart';
+import 'package:sprints_shopping_app/core/helpers/spacing.dart';
+import 'package:sprints_shopping_app/core/theming/styles.dart';
+import 'package:sprints_shopping_app/features/home/widgets/product_item_button.dart';
 
-class BestSellingProductItem extends StatelessWidget {
-  const BestSellingProductItem({
+class ProductItem extends StatelessWidget {
+  const ProductItem({
     super.key,
     required this.image,
-    required this.index,
   });
 
   final String image;
-  final int index;
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-          height: 180,
-          width: 180,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16.0),
-            child: CachedNetworkImage(
-              imageUrl: image,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => const Center(
-                child: CircularProgressIndicator(),
+    return AspectRatio(
+      aspectRatio: 160 / 222,
+      child: Stack(
+        children: [
+          Container(
+            decoration: ShapeDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF383c43),
+                  Color(0x003D414B),
+                ],
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18),
+              ),
+              shadows: [
+                BoxShadow(
+                  color: Color(0x3F000000),
+                  blurRadius: 60,
+                  offset: Offset(0, 20),
+                  spreadRadius: 0,
+                )
+              ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: Image.asset(
+                      image,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  verticalSpace(8),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      textAlign: TextAlign.start,
+                      "SONY 200mm Zoom",
+                      overflow: TextOverflow.ellipsis,
+                      style: Styles.font12ProductName,
+                    ),
+                  ),
+                  verticalSpace(4),
+                  Row(
+                    children: [
+                      Text(
+                        "\$6000",
+                        style: Styles.font14ProductPrice,
+                      ),
+                      Spacer(),
+                      ProductItemButton(),
+                    ],
+                  ),
+                ],
               ),
             ),
           ),
-        ),
-        Positioned(
-          top: 0,
-          right: 0,
-          child: ProductItemAddToCartButton(),
-        ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: ProductItemDetails(index: index),
-        ),
-      ],
+          Positioned(
+            top: 8,
+            right: 8,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(50),
+              onTap: () {
+                displayFlushBar(
+                  context,
+                  message: "Added to the cart",
+                  color: Color(0xFF3b3e45),
+                  icon: Icons.check_box,
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.all(8),
+                decoration: ShapeDecoration(
+                  color: Color(0xFF3b3e45),
+                  shape: CircleBorder(),
+                ),
+                child: Icon(Icons.shopping_cart_checkout_rounded),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

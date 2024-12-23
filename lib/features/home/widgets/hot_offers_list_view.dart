@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sprints_shopping_app/features/home/widgets/hot_offers_product_item.dart';
+import 'package:sprints_shopping_app/core/helpers/assets.dart';
+import 'package:sprints_shopping_app/features/home/widgets/product_item.dart';
 
 class HotOffersListView extends StatelessWidget {
   const HotOffersListView({
@@ -15,9 +16,8 @@ class HotOffersListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(right: 16.0),
-          child: HotOffersProductItem(
-            image: 'https://picsum.photos/id/${index + 20}/200',
-            text: 'Product ${index + 1}',
+          child: ProductItem(
+            image: ImageAssets.camera8,
           ),
         );
       },

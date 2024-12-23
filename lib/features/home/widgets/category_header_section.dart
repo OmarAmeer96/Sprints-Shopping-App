@@ -16,15 +16,7 @@ class CategoryHeaderSection extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Styles.font20HeaderSection,
-        ),
-        InkWell(
-          onTap: () {},
-          borderRadius: BorderRadius.circular(10),
-          child: Text(
-            'View All',
-            style: Styles.font14HeaderSection,
-          ),
+          style: Styles.font20WhiteSemiBold,
         ),
       ],
     );

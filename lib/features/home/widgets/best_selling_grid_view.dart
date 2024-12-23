@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sprints_shopping_app/core/helpers/assets.dart';
 import 'package:sprints_shopping_app/features/home/widgets/product_item.dart';
 
 class BestSellingGridView extends StatelessWidget {
@@ -9,6 +10,7 @@ class BestSellingGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      padding: EdgeInsets.zero,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -18,9 +20,8 @@ class BestSellingGridView extends StatelessWidget {
       ),
       itemCount: 8,
       itemBuilder: (context, index) {
-        return BestSellingProductItem(
-          image: 'https://picsum.photos/id/${index + 10}/200',
-          index: index,
+        return ProductItem(
+          image: ImageAssets.camera7,
         );
       },
     );

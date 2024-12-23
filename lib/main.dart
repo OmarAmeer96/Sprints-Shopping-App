@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:sprints_shopping_app/features/home/home_view.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sprints_shopping_app/core/helpers/simple_bloc_observer.dart';
+import 'package:sprints_shopping_app/core/routing/app_router.dart';
+import 'package:sprints_shopping_app/pixels_app.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() async {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.white,
+  ));
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  WidgetsFlutterBinding.ensureInitialized();
+  // setupGetIt();
+  Bloc.observer = SimpleBlocObserver();
+  await ScreenUtil.ensureScreenSize();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        useMaterial3: true,
-      ),
-      home: HomeView(),
-    );
-  }
+  runApp(
+    PixelsApp(
+      appRouter: AppRouter(),
+    ),
+  );
 }

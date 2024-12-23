@@ -1,7 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sprints_shopping_app/core/theming/font_family_helper.dart';
 
 class Styles {
+  static TextStyle font20WhiteSemiBold = TextStyle(
+    color: Colors.white,
+    fontSize: 20.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 2,
+  );
+
+  static TextStyle font12ProductName = TextStyle(
+    color: Colors.white,
+    fontSize: 12.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w500,
+    letterSpacing: 0.60,
+  );
+
+  static TextStyle font14ProductPrice = TextStyle(
+    color: Colors.white,
+    fontSize: 14.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w600,
+    letterSpacing: 0.70,
+  );
+
+  // OLD
   static TextStyle font22AppBar = TextStyle(
     color: Colors.black,
     fontSize: 22,
