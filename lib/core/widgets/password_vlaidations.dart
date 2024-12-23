@@ -41,16 +41,16 @@ class PasswordValidations extends StatelessWidget {
       children: [
         const CircleAvatar(
           radius: 2.5,
-          backgroundColor: ColorsManager.primaryColor,
+          backgroundColor: ColorsManager.mainGrey,
         ),
         horizontalSpace(6),
         Text(
           text,
-          style: Styles.font12HomeBanner.copyWith(
+          style: Styles.font13GreyBold.copyWith(
             decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2,
-            color: ColorsManager.primaryColor,
+            color: ColorsManager.mainGrey,
           ),
         ),
       ],

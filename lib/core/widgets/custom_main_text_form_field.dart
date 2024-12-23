@@ -54,7 +54,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.r),
               borderSide: const BorderSide(
-                color: ColorsManager.primaryColor,
+                color: ColorsManager.enabledTextFieldColor,
                 width: 1.3,
               ),
             ),
@@ -62,7 +62,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.r),
               borderSide: const BorderSide(
-                color: ColorsManager.primaryColorShade2,
+                color: ColorsManager.mainBlue,
                 width: 1.3,
               ),
             ),
@@ -70,7 +70,7 @@ class CustomMainTextFormFiels extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.r),
               borderSide: const BorderSide(
-                color: Colors.red,
+                color: ColorsManager.errorTextFieldColor,
                 width: 1.3,
               ),
             ),
@@ -78,19 +78,19 @@ class CustomMainTextFormFiels extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(16.r),
               borderSide: const BorderSide(
-                color: Colors.red,
+                color: ColorsManager.errorTextFieldColor,
                 width: 1.3,
               ),
             ),
         labelText: labelText,
-        labelStyle: labelStyle ?? Styles.font12HomeBanner,
+        labelStyle: labelStyle ?? Styles.enabledTextFieldsLabelText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
-        fillColor: fillColor ?? ColorsManager.primaryColor,
+        fillColor: fillColor ?? ColorsManager.textFieldFillColor,
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-      style: style ?? Styles.font12HomeBanner,
+      style: style ?? Styles.focusedTextFieldsLabelText,
       validator: (value) {
         return validator(value);
       },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sprints_shopping_app/core/theming/colors_manager.dart';
 import 'package:sprints_shopping_app/core/theming/font_family_helper.dart';
 
 class Styles {
@@ -41,6 +42,46 @@ class Styles {
     fontFamily: FontFamilyHelper.clashDisplay,
     fontWeight: FontWeight.w600,
     letterSpacing: 1.10,
+  );
+
+  // Appointment
+  static TextStyle font32BlueBold = TextStyle(
+    fontSize: 32.sp,
+    color: ColorsManager.primaryColor,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle font18BlackBold = TextStyle(
+    fontSize: 20.sp,
+    color: ColorsManager.primaryColor,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w700,
+  );
+
+  static TextStyle font18White600 = TextStyle(
+    fontSize: 18.sp,
+    color: Colors.white,
+  );
+
+  static TextStyle font13GreyBold = TextStyle(
+    fontSize: 13.sp,
+    color: ColorsManager.primaryColor,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w400,
+  );
+
+  static TextStyle enabledTextFieldsLabelText = TextStyle(
+    color: ColorsManager.primaryColor,
+    fontSize: 14.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w500,
+  );
+  static TextStyle focusedTextFieldsLabelText = TextStyle(
+    color: ColorsManager.primaryColor,
+    fontSize: 14.sp,
+    fontFamily: FontFamilyHelper.clashDisplay,
+    fontWeight: FontWeight.w500,
   );
 
   // OLD
