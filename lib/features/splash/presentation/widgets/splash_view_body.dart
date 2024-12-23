@@ -67,8 +67,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
     _logoFadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
-      parent: _animationController,
-      curve: const Interval(0.5, 1.0, curve: Curves.easeIn),
+        parent: _animationController,
+        curve: const Interval(0.5, 1.0, curve: Curves.easeIn),
       ),
     );
 
@@ -78,7 +78,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void _navigateToHome() {
     Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
-        context.pushReplacementNamed(Routes.homeView);
+        context.pushReplacementNamed(Routes.signinView);
       }
     });
   }
