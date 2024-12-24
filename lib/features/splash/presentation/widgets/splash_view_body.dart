@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sprints_shopping_app/core/helpers/constants.dart';
 import 'package:sprints_shopping_app/core/helpers/extensions.dart';
 import 'package:sprints_shopping_app/core/routing/routes.dart';
 import 'package:sprints_shopping_app/features/splash/presentation/widgets/build_splash_view_body.dart';
@@ -76,11 +77,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void _navigateToHome() {
-    Future.delayed(const Duration(seconds: 4), () {
-      if (mounted) {
-        context.pushReplacementNamed(Routes.signinView);
-      }
-    });
+    Future.delayed(
+      const Duration(seconds: 4),
+      () {
+        if (mounted) {
+          context.pushReplacementNamed(
+            isUserLoggedIn ? Routes.homeView : Routes.signinView,
+          );
+        }
+      },
+    );
   }
 
   @override
