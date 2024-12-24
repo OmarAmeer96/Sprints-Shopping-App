@@ -6,11 +6,11 @@ Welcome to **Sprints Shopping App**, a Flutter project designed to showcase a si
 
 | Output                     |
 | -------------------------- |
-| <img src="https://github.com/user-attachments/assets/4c7b9d3f-37e5-49aa-84dc-d1d87e61df8e" height="500"/> |
+| <img src="https://github.com/user-attachments/assets/4c7b9d3f-37e5-49aa-84dc-d1d87e61df8e"/> |
 
 | Splash                     | Signin                     | Signup                     | Home                       | Adding to Cart             |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| <img src="https://github.com/user-attachments/assets/27ad281a-4d6b-4d93-8401-52f19159fc90" height="500"/> | <img src="https://github.com/user-attachments/assets/d2a658b2-0159-4c3c-9b1a-235c70a9a4f1" height="500"/> | <img src="https://github.com/user-attachments/assets/2a514191-61d7-45d4-80b6-58cf923e0bed" height="500"/> | <img src="https://github.com/user-attachments/assets/872ef61c-0d43-4220-9230-14aef670e55b" height="500"/> | <img src="https://github.com/user-attachments/assets/c5b12af0-dad4-4559-ba96-9d4bb1339545" height="500"/> |
+| <img src="https://github.com/user-attachments/assets/27ad281a-4d6b-4d93-8401-52f19159fc90"/> | <img src="https://github.com/user-attachments/assets/d2a658b2-0159-4c3c-9b1a-235c70a9a4f1"/> | <img src="https://github.com/user-attachments/assets/2a514191-61d7-45d4-80b6-58cf923e0bed"/> | <img src="https://github.com/user-attachments/assets/872ef61c-0d43-4220-9230-14aef670e55b"/> | <img src="https://github.com/user-attachments/assets/c5b12af0-dad4-4559-ba96-9d4bb1339545"/> |
 
 ### App Demo 🎥
 
