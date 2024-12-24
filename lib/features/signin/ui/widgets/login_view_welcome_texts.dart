@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sprints_shopping_app/core/helpers/spacing.dart';
+import 'package:sprints_shopping_app/core/theming/font_family_helper.dart';
 import 'package:sprints_shopping_app/core/theming/styles.dart';
 
 class LoginViewWelcomeTexts extends StatelessWidget {
@@ -20,6 +21,7 @@ class LoginViewWelcomeTexts extends StatelessWidget {
               fontSize: 24.sp,
               letterSpacing: -0.48,
               color: Colors.white,
+              fontFamily: FontFamilyHelper.clashDisplay,
             ),
           ),
         ),

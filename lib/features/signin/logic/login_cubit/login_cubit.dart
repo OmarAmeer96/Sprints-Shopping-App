@@ -12,6 +12,7 @@ class LoginCubit extends Cubit<LoginState> {
   LoginCubit(this._loginRepo) : super(const LoginState.initial());
 
   final formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 

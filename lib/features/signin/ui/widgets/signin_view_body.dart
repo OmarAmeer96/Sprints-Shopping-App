@@ -12,9 +12,14 @@ import 'package:sprints_shopping_app/features/signin/ui/widgets/login_email_and_
 import 'package:sprints_shopping_app/features/signin/ui/widgets/login_view_welcome_texts.dart';
 import 'package:sprints_shopping_app/features/home/widgets/custom_positioned_home_overlay.dart';
 
-class SigninViewBody extends StatelessWidget {
+class SigninViewBody extends StatefulWidget {
   const SigninViewBody({super.key});
 
+  @override
+  State<SigninViewBody> createState() => _SigninViewBodyState();
+}
+
+class _SigninViewBodyState extends State<SigninViewBody> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -81,6 +86,9 @@ class SigninViewBody extends StatelessWidget {
   void validateThenLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
       context.read<LoginCubit>().emitLoginState();
+    } else {
+      context.read<LoginCubit>().autovalidateMode = AutovalidateMode.always;
+      setState(() {});
     }
   }
 }

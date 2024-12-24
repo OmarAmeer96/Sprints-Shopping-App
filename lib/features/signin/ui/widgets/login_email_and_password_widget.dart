@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sprints_shopping_app/core/helpers/app_regex.dart';
 import 'package:sprints_shopping_app/core/helpers/spacing.dart';
 import 'package:sprints_shopping_app/core/theming/colors_manager.dart';
+import 'package:sprints_shopping_app/core/theming/font_family_helper.dart';
 import 'package:sprints_shopping_app/core/theming/styles.dart';
 import 'package:sprints_shopping_app/core/widgets/custom_main_text_form_field.dart';
 import 'package:sprints_shopping_app/core/widgets/password_vlaidations.dart';
@@ -55,17 +56,31 @@ class _LoginEmailAndPasswordWidgetState
   Widget build(BuildContext context) {
     return Form(
       key: context.read<LoginCubit>().formKey,
+      autovalidateMode: context.read<LoginCubit>().autovalidateMode,
       child: Column(
         children: [
           CustomMainTextFormFiels(
             labelText: 'Email',
-            labelStyle: Styles.font12ProductName,
+            labelStyle: Styles.font22AppBar.copyWith(
+              fontSize: 13,
+              color: ColorsManager.accentColor,
+              fontFamily: FontFamilyHelper.suwannaphumBlack,
+            ),
             isObscureText: false,
-            style: Styles.font12ProductName,
+            style: Styles.font22AppBar.copyWith(
+              fontSize: 13,
+              color: Colors.white,
+              fontFamily: FontFamilyHelper.suwannaphumBlack,
+            ),
             controller: context.read<LoginCubit>().emailController,
             validator: (value) {
-              if (value!.isEmpty || !AppRegex.isEmailValid(value)) {
+              if (value!.isEmpty) {
                 return 'Please enter your email';
+              }
+              if (!AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
+              } else {
+                return null;
               }
             },
             prefixIcon: const Icon(
@@ -79,9 +94,17 @@ class _LoginEmailAndPasswordWidgetState
           verticalSpace(18),
           CustomMainTextFormFiels(
             labelText: 'Password',
-            labelStyle: Styles.font12ProductName,
+            labelStyle: Styles.font22AppBar.copyWith(
+              fontSize: 13,
+              color: ColorsManager.accentColor,
+              fontFamily: FontFamilyHelper.suwannaphumBlack,
+            ),
             isObscureText: isObscureText,
-            style: Styles.font12ProductName,
+            style: Styles.font22AppBar.copyWith(
+              fontSize: 13,
+              color: Colors.white,
+              fontFamily: FontFamilyHelper.suwannaphumBlack,
+            ),
             suffixIcon: GestureDetector(
               onTap: () {
                 setState(() {
@@ -101,6 +124,11 @@ class _LoginEmailAndPasswordWidgetState
             validator: (value) {
               if (value!.isEmpty) {
                 return 'Please enter your password';
+              }
+              if (!AppRegex.isPasswordValid(value)) {
+                return 'Please enter a valid password';
+              } else {
+                return null;
               }
             },
             focusNode: passwordFocusNode,
