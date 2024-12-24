@@ -59,7 +59,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
 
     _logoRotationAnimation =
-        Tween<double>(begin: 0.0, end: 2 * 3.14159).animate(
+        Tween<double>(begin: 0.0, end: 2 * 3.141592653589793).animate(
       CurvedAnimation(
         parent: _animationController,
         curve: const Interval(0.0, 0.5, curve: Curves.easeOut),

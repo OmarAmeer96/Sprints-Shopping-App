@@ -3,6 +3,7 @@ import 'package:sprints_shopping_app/core/routing/routes.dart';
 import 'package:sprints_shopping_app/core/theming/colors_manager.dart';
 import 'package:sprints_shopping_app/core/theming/font_family_helper.dart';
 import 'package:sprints_shopping_app/core/theming/styles.dart';
+import 'package:sprints_shopping_app/core/widgets/loaading_animation.dart';
 import 'package:sprints_shopping_app/features/signup/logic/signup_cubit/signup_cubit.dart';
 import 'package:sprints_shopping_app/features/signup/logic/signup_cubit/signup_state.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +23,10 @@ class SignupBlocListener extends StatelessWidget {
             showDialog(
               context: context,
               builder: (context) => const Center(
-                child: CircularProgressIndicator(
-                  color: ColorsManager.mainBlue,
-                ),
+                child: LoadingAnimation(),
+                // child: CircularProgressIndicator(
+                //   color: ColorsManager.mainBlue,
+                // ),
               ),
             );
           },
