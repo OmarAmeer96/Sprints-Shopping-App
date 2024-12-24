@@ -32,8 +32,9 @@ void main() async {
 
 // Check if the user is logged in or not
 Future<void> checkIfUserIsLoggedIn() async {
-  String? userToken =
-      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
+  String? userToken = await SharedPrefHelper.getSecuredString(
+    SharedPrefKeys.userToken,
+  );
   debugPrint('User Token: $userToken');
   if (userToken.isNullOrEmpty()) {
     isUserLoggedIn = false;

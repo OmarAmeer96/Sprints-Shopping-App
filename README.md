@@ -12,6 +12,25 @@ Welcome to **Sprints Shopping App**, a Flutter project designed to showcase a si
 
 - **[cached_network_image](https://pub.dev/packages/cached_network_image)**: For efficient image loading and caching.
 - **[another_flushbar](https://pub.dev/packages/another_flushbar)**: For displaying beautiful and customizable in-app notifications.
+- **[flutter_bloc](https://pub.dev/packages/flutter_bloc)**: For state management using the BLoC pattern.
+- **[flutter_screenutil](https://pub.dev/packages/flutter_screenutil)**: For adapting screen and font size to different screen sizes.
+- **[flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage)**: For storing data securely.
+- **[persistent_bottom_nav_bar](https://pub.dev/packages/persistent_bottom_nav_bar)**: For a customizable bottom navigation bar.
+- **[flutter_spinkit](https://pub.dev/packages/flutter_spinkit)**: For loading spinners.
+- **[firebase_core](https://pub.dev/packages/firebase_core)**: For Firebase core functionalities.
+- **[lottie](https://pub.dev/packages/lottie)**: For Lottie animations.
+- **[cupertino_icons](https://pub.dev/packages/cupertino_icons)**: For iOS style icons.
+- **[dio](https://pub.dev/packages/dio)**: For networking.
+- **[retrofit](https://pub.dev/packages/retrofit)**: For type-safe HTTP client.
+- **[pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger)**: For logging network requests.
+- **[shared_preferences](https://pub.dev/packages/shared_preferences)**: For local storage.
+- **[flutter_native_splash](https://pub.dev/packages/flutter_native_splash)**: For splash screen.
+- **[flutter_svg](https://pub.dev/packages/flutter_svg)**: For SVG support.
+- **[json_serializable](https://pub.dev/packages/json_serializable)**: For JSON serialization.
+- **[json_annotation](https://pub.dev/packages/json_annotation)**: For JSON annotations.
+- **[get_it](https://pub.dev/packages/get_it)**: For dependency injection.
+- **[freezed](https://pub.dev/packages/freezed)**: For code generation.
+- **[freezed_annotation](https://pub.dev/packages/freezed_annotation)**: For annotations used with Freezed.
 
 ## Getting Started
 
@@ -37,11 +56,18 @@ To get started with this project, follow these steps:
 ## Project Structure
 
 - **lib/main.dart**: The entry point of the application.
-- **lib/features/home/home_view.dart**: The main home screen of the app.
-- **lib/features/home/widgets/**: Contains various widgets used in the home screen, such as the banner, grid view, and list view.
+- **lib/features/home/ui.dart**: The home screen of the application.
+- **lib/features/home/logic/**: Contains the BLoC logic for the home screen.
+- **lib/features/home/data.dart**: Contains the data models and repos for the home screen.
+- **lib/features/signin/ui.dart**: The sign-in screen of the application.
+- **lib/features/signin/logic/**: Contains the BLoC logic for the sign-in screen.
+- **lib/features/signin/data.dart**: Contains the data models and repos for the sign-in screen.
+- **lib/features/signup/ui.dart**: The sign-up screen of the application.
+- **lib/features/signup/logic/**: Contains the BLoC logic for the sign-up screen.
+- **lib/features/signup/data.dart**: Contains the data models and repos for the sign-up screen.
 
 ## Screenshots
 
-| Output                    | Best Selling              | Hot Offers                | Adding to Cart            |
-| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| Output                                                                                                   | Best Selling                                                                                             | Hot Offers                                                                                               | Adding to Cart                                                                                           |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | <img src="https://github.com/user-attachments/assets/a7156071-b163-4250-9ca5-edb55a2c5884" width="500"/> | <img src="https://github.com/user-attachments/assets/48387ec0-3e70-4fe9-99b8-32cce7ea279d" width="200"/> | <img src="https://github.com/user-attachments/assets/ffbf70ba-3791-4b9d-b7f5-d96699052bd7" width="200"/> | <img src="https://github.com/user-attachments/assets/e6addc07-1ceb-4b2d-b9c5-92a5288a0cf3" width="200"/> |
